@@ -4,14 +4,15 @@
 
 var cultMember = function (indx) {
 	
-	//set json reference
+	//set local json reference
 	var member = json.sith[indx];
+	
 	
 	//accessor for name
 	var getName = function (){
 		return member.name;
 	};
-		//accessor for capture status
+	//accessor for capture status
 	var getStatus = function (){
 		return member.captured;
 	};
@@ -66,11 +67,29 @@ var cultMember = function (indx) {
 	};
 };
 
-var teenal = cultMember(0),
+var allTargets = [
+	teenal = cultMember(0),
 	jax = cultMember(1),
 	trick = cultMember(2),
 	fanad = cultMember(3),
-	nix = cultMember(4);
+	nix = cultMember(4)
+];
+
+targetsLeft = function(targets){
+	var left = [];
+	while (left.length === 0){
+		for (var i = 0; i < targets.length; i++){
+			var name = targets[i].getName();
+			if (targets[i].getStatus() === false){
+				left.push(name);
+			}
+			else{
+			
+			};
+		};
+	};
+	return left;
+};
 
 
 
