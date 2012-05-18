@@ -91,6 +91,17 @@ targetsLeft = function(targets){
 	return left;
 };
 
+for (i = 0; i < allTargets.length; i++){
+	var cultist = allTargets[i];
+	console.log("name: " + cultist.getName() + ", currently captured: " + cultist.getStatus() 
+				+ ", known weapon: " + cultist.examineWeapon() + ", cell number: " + cultist.checkCell() + ".");
+	if (cultist.getStatus() === false){
+		cultist.setStatus(true);
+		cultist.assignCell(i + 3000);
+		console.log (cultist.getName() + " has been captured and placed in cell " + cultist.checkCell() + ".");
+	};
+	
+};
 
 
 alert("JavaScript works!");
