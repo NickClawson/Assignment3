@@ -2,6 +2,7 @@
 //Date: 5/15/2012
 //Assignment 3
 
+//JSON data, 
 var json = {
 	"sith": [
 		{
