@@ -16,9 +16,25 @@ var cultMember = function (indx) {
 		return member.captured;
 	};
 	
+	//accessor for cell number
+	var checkCell = function (){
+		if (member.cell === ""){
+			if (member.captured === false){
+				return member.name + " is still at large.";
+			}
+			else{
+				return member.name + " has not been assigned a cell yet."
+			};
+		}
+		else{
+			return member.cell;
+		};
+	};
+	
 	return {
 		"getName": getName,
-		"getStatus": getStatus
+		"getStatus": getStatus,
+		"checkCell": checkCell
 	};
 };
 
