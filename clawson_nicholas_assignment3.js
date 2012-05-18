@@ -30,11 +30,23 @@ var cultMember = function (indx) {
 			return member.cell;
 		};
 	};
+		
+	//accessor for weapon information
+	var examineWeapon = function (){
+		return member.lightsaber;
+	};
+	
+	//mutator for capture status
+	var setStatus = function (status){
+		member.captured = status;
+	};
 	
 	return {
 		"getName": getName,
 		"getStatus": getStatus,
-		"checkCell": checkCell
+		"checkCell": checkCell,
+		"examineWeapon": examineWeapon,
+		"setStatus": setStatus
 	};
 };
 
@@ -43,6 +55,8 @@ var teenal = cultMember(0),
 	trick = cultMember(2),
 	fanad = cultMember(3),
 	nix = cultMember(4);
+console.log(nix);
+nix;
 console.log(nix);
 
 alert("JavaScript works!");
