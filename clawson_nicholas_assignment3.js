@@ -4,8 +4,20 @@
 
 var cultMember = function (indx) {
 	
-	return json.sith[indx];
+	//set json reference
+	var member = json.sith[indx];
+	
+	//accessor for name
+	var getName = function (){
+		return member.name;
+	}
+	
+	return {
+		"getName": getName
+		
+	};
 };
+
 var teenal = cultMember(0),
 	jax = cultMember(1),
 	trick = cultMember(2),
