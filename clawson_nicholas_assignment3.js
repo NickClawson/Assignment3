@@ -41,12 +41,28 @@ var cultMember = function (indx) {
 		member.captured = status;
 	};
 	
+	//mutator for cell information
+	var assignCell = function (cellNumber){
+		if (member.captured === false){
+			console.log(member.name + " has not been captured yet!");
+		}
+		else{
+			if (member.cell === ""){
+				member.cell = cellNumber;
+			}
+			else{
+				console.log(member.name + " already has a cell!");
+			}
+		};
+	};
+	
 	return {
 		"getName": getName,
 		"getStatus": getStatus,
 		"checkCell": checkCell,
 		"examineWeapon": examineWeapon,
-		"setStatus": setStatus
+		"setStatus": setStatus,
+		"assignCell": assignCell
 	};
 };
 
@@ -55,9 +71,8 @@ var teenal = cultMember(0),
 	trick = cultMember(2),
 	fanad = cultMember(3),
 	nix = cultMember(4);
-console.log(nix);
-nix;
-console.log(nix);
+
+
 
 alert("JavaScript works!");
 
