@@ -2,23 +2,15 @@
 //Date: 5/15/2012
 //Assignment 3
 
-//Fetches object from json.js
-var grabData = function (json){
-	var sithCult = [];
-	for (var i = 0; i < json.sith.length; i++){
-		var sithLord = json.sith[i];
-		sithCult.push(sithLord);
-	 };
-	 
-	 //returned array
-	 return sithCult;
+//Fetches object from json.js and creates list
+var sithList = function (json){
+	
+return json;	
 };
+var sithCult = sithList(json);
+console.log(sithCult);
 
-//array to hold json data, existing cult members
-var sithCult = grabData(json);
 
-
-};
 
 
 
