@@ -28,7 +28,7 @@ var json = {
 		{
 			"name": "Darth Trick",
 			"captured": true,
-			"cell": 3190,
+			"cell": "",
 			"lightsaber": {
 				"crystal": "red",
 				"blades": 1
