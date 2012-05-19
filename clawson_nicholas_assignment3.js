@@ -8,16 +8,16 @@ var cultMember = function (indx) {
 	var member = json.sith[indx];
 	
 	
-	//accessor for name
+	//accessor for name, returns string
 	var getName = function (){
 		return member.name;
 	};
-	//accessor for capture status
+	//accessor for capture status, returns boolean
 	var getStatus = function (){
 		return member.captured;
 	};
 	
-	//accessor for cell number
+	//accessor for cell number, returns number
 	var checkCell = function (){
 		if (member.cell === ""){
 			if (member.captured === false){
@@ -32,17 +32,17 @@ var cultMember = function (indx) {
 		};
 	};
 		
-	//accessor for weapon information
+	//accessor for weapon information, returns object
 	var examineWeapon = function (){
 		return member.lightsaber;
 	};
 	
-	//mutator for capture status
+	//mutator for capture status, alters boolean
 	var setStatus = function (status){
 		member.captured = status;
 	};
 	
-	//mutator for cell information
+	//mutator for prison cell information, alters number
 	var assignCell = function (cellNumber){
 		if (member.captured === false){
 			console.log(member.name + " has not been captured yet!");
@@ -58,6 +58,7 @@ var cultMember = function (indx) {
 	};
 	
 	return {
+		//returned methods
 		"getName": getName,
 		"getStatus": getStatus,
 		"checkCell": checkCell,
@@ -67,6 +68,7 @@ var cultMember = function (indx) {
 	};
 };
 
+//global array
 var allTargets = [
 	teenal = cultMember(0),
 	jax = cultMember(1),
@@ -75,6 +77,7 @@ var allTargets = [
 	nix = cultMember(4)
 ];
 
+//function to determine remaining targets and return array
 targetsLeft = function(targets){
 	var left = [];
 	while (left.length === 0){
@@ -91,6 +94,11 @@ targetsLeft = function(targets){
 	return left;
 };
 
+//output values
+var remainingTargets = targetsLeft(allTargets);
+console.log ("Remaining targets to capture: " + remainingTargets);
+console.log(" ");
+
 for (i = 0; i < allTargets.length; i++){
 	var cultist = allTargets[i];
 	console.log("name: " + cultist.getName() + ", currently captured: " + cultist.getStatus() 
@@ -100,6 +108,7 @@ for (i = 0; i < allTargets.length; i++){
 		cultist.assignCell(i + 3000);
 		console.log (cultist.getName() + " has been captured and placed in cell " + cultist.checkCell() + ".");
 	};
+	console.log(" ");
 	
 };
 
